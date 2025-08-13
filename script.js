@@ -1,6 +1,6 @@
 const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
-const taskList = document.getElementById("taskList");
+const taskList = document.getElementById("task-list");
 
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
