@@ -11,7 +11,7 @@ function renderTasks() {
         const li = document.createElement("li");
         li.className = "flex justify-between items-center bg-gray-50 p-2 rounded shadow";
         li.innerHTML = `
-        <span class="${task.completed ? 'line-through text-gray-400' : ''} cursor-pointer" data-index="${task.text}">
+        <span class="${task.completed ? 'line-through text-gray-400' : ''} cursor-pointer" data-index="${index}">
             ${task.text}
         </span>
         <button class="text-red-500 hover:text-red-700" data-index="${index}">Delete</button>
