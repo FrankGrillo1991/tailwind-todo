@@ -1,0 +1,21 @@
+const taskInput = document.getElementById("taskInput");
+const addTaskBtn = document.getElementById("addTaskBtn");
+const taskList = document.getElementById("taskList");
+
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+//Render tasks
+function renderTasks() {
+    taskList.innerHTML = "";
+    tasks.forEach((task, index) => {
+        const li = document.createElement("li");
+        li.className = "flex justify-between items-center bg-gray-50 p-2 rounded shadow";
+        li.innerHTML = `
+        <span class="${task.completed ? 'line-through text-gray-400' : ''} cursor-pointer" data-index="${task.text}">
+            ${task.text}
+        </span>
+        <button class="text-red-500 hover:text-red-700" data-index="${index}">Delete</button>
+        `;
+        taskList.appendChild(li);
+    })
+}
